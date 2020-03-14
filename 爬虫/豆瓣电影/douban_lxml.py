@@ -2,7 +2,6 @@
 # -*- coding:utf-8 -*-
 from lxml import etree
 
-
 parser = etree.HTMLParser(encoding='utf-8')
 htmlElement = etree.parse("选电影.html", parser=parser)
 # print(etree.tostring(htmlElement, encoding='utf-8').decode('utf-8'))
