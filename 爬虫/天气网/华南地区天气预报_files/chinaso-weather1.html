@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0064)http://promotion.chinaso.com/chinasosearch/chinaso-weather1.html -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+               <title>domo8-国搜推广</title>
+<meta name="renderer" content="webkit">
+<meta name="uctk" content="enabled">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta name="filetype" content="0">
+<meta name="publishedtype" content="1">
+<meta name="pagetype" content="2">
+<meta name="catalogs" content="C_3310898">
+<style type="text/css">
+input { padding:0px; outline:none; }
+::-ms-clear,::-ms-reveal{display:none;}
+#chinaso_search { position:relative; width:334px; height:38px; float: left;}
+.search_input { height:38px;line-height:38px; float:left; border:0px; width:286px; padding-left:10px; color:#aaa; font-size:14px; font-family: 'Microsoft YaHei','Hiragino Sans GB',Helvetica,Arial,'Lucida Grande',sans-serif; }
+.search_btn { background: url(http://n1.static.pg0.cn/promotion/static/v2/image/weather_bg.png) no-repeat -3px -2px; border: none; width:38px; height:38px; cursor:pointer;  }
+#searchHotWord { font-size:14px; color:#aaa; position: absolute; left:10px; top:10px; }
+body,html{font-family:'Microsoft YaHei','Hiragino Sans GB',Helvetica,Arial,'Lucida Grande',sans-serif;}
+</style>
+<script type="text/javascript" charset="utf-8">
+var Tools = {
+	trim: function(str) {
+		if (typeof str === "string") {
+			return str.replace(/^\s+/g, "").replace(/\s+$/g, "")
+		} else {
+			return ""
+		}
+	},
+	val: function(node) {
+		if (node.nodeType === 1) {
+			return node.value
+		}
+		return ""
+	},
+	getElesByCls: function(parentNode, className, tagName) {
+		parentNode = parentNode || document;
+		if (document.getElementsByClassName) {
+			return document.getElementsByClassName(className)
+		} else {
+			var clsAll = [],
+				tagAll = parentNode.getElementsByTagName(tagName);
+			for (var i = 0, lenth = tagAll.length; i < lenth; i++) {
+				var nodeCur = tagAll[i];
+				if (nodeCur.nodeType === 1 && nodeCur.className == className) {
+					clsAll.push(nodeCur)
+				}
+			}
+			return clsAll
+		}
+	},
+	addHandler: function(element, type, handler) {
+		if (element.addEventListener) {
+			element.addEventListener(type, handler, false)
+		} else {
+			if (element.attachEvent) {
+				element.attachEvent("on" + type, handler)
+			} else {
+				element["on" + type] = handler
+			}
+		}
+	},
+	ieVersion: function() {
+		var agent = navigator.userAgent.toLowerCase(),
+			regStr_ie = /msie [\d.]+;/gi,
+			browser = 0;
+		if (agent.indexOf("msie") > 0) {
+			browser = agent.match(regStr_ie)
+		}
+		if (browser) {
+			return parseInt((browser + "").replace(/[^0-9.]/ig, ""))
+		}
+		return 0
+	}
+};
+var ieVersion = Tools.ieVersion();
+if (ieVersion !== 0 && ieVersion <= 8) {
+	Tools.addHandler(window, "load", function() {
+		chinasoSearchboxInit()
+	})
+} else {
+	Tools.addHandler(document, "DOMContentLoaded", function() {
+		chinasoSearchboxInit()
+	})
+}
+function chinasoSearchboxInit() {
+	buildHtml();
+	function buildHtml() {
+		var htmlWrapper;
+		htmlWrapper = '<form action="http://search.weather.com.cn/weather/s.htm?" id="chinasoForm" target="_blank">' +
+								 '<input type="text" class="search_input" name="q" autocomplete="off">' + 
+								 '<input type="submit" class="search_btn"  value="" />' + 
+								 '<div id="searchHotWord">请输入关键字</div>' + 
+					   '</form>'; 
+		document.getElementById("chinaso_search").innerHTML = htmlWrapper
+	}
+    suggestHide();
+ 
+	function suggestHide() {
+		var formbox = document.getElementById("chinasoForm"),
+			ipt = Tools.getElesByCls(formbox, "search_input", "input")[0],
+			wordDiv = document.getElementById("searchHotWord");
+		if (Tools.trim(Tools.val(ipt)) !== "") {
+			wordDiv.style.display = "none"
+		}
+		wordDiv.onclick = function() {
+			ipt.focus();
+			wordDiv.style.display = "none";
+		};
+		ipt.onclick = function() {
+			wordDiv.style.display = "none";
+		};
+		ipt.onkeydown = function() {
+			wordDiv.style.display = "none"
+		};
+               ipt.onblur = function() {
+			if (Tools.trim(Tools.val(ipt)) === "") {
+				wordDiv.style.display = "block"
+			}
+		};
+		formbox.onsubmit = function() {
+			if (Tools.trim(Tools.val(ipt)) === "") {
+				wordDiv.style.display = "none";
+				ipt.value = (Tools.trim(wordDiv.innerHTML))
+			}
+			document.charset = "utf-8"
+		}
+	}
+};
+</script>
+</head>
+<body marginwidth="0" marginheight="0">
+<div id="chinaso_search"><form action="http://search.weather.com.cn/weather/s.htm?" id="chinasoForm" target="_blank"><input type="text" class="search_input" name="q" autocomplete="off"><input type="submit" class="search_btn" value=""><div id="searchHotWord">请输入关键字</div></form></div>
+<div style="display:none">
+<script type="text/javascript">document.write(unescape("%3Cscript src='http://stat.chinaso.com/webdig.js?z=1' type='text/javascript'%3E%3C/script%3E"));</script><script src="./webdig.js" type="text/javascript"></script>
+<script type="text/javascript">wd_paramtracker("_wdxid=000000000000000000000000000000000000000000")</script>
+</div>
+
+<audio controls="controls" style="display: none;"></audio></body><style type="text/css">#yddContainer{display:block;font-family:Microsoft YaHei;position:relative;width:100%;height:100%;top:-4px;left:-4px;font-size:12px;border:1px solid}#yddTop{display:block;height:22px}#yddTopBorderlr{display:block;position:static;height:17px;padding:2px 28px;line-height:17px;font-size:12px;color:#5079bb;font-weight:bold;border-style:none solid;border-width:1px}#yddTopBorderlr .ydd-sp{position:absolute;top:2px;height:0;overflow:hidden}.ydd-icon{left:5px;width:17px;padding:0px 0px 0px 0px;padding-top:17px;background-position:-16px -44px}.ydd-close{right:5px;width:16px;padding-top:16px;background-position:left -44px}#yddKeyTitle{float:left;text-decoration:none}#yddMiddle{display:block;margin-bottom:10px}.ydd-tabs{display:block;margin:5px 0;padding:0 5px;height:18px;border-bottom:1px solid}.ydd-tab{display:block;float:left;height:18px;margin:0 5px -1px 0;padding:0 4px;line-height:18px;border:1px solid;border-bottom:none}.ydd-trans-container{display:block;line-height:160%}.ydd-trans-container a{text-decoration:none;}#yddBottom{position:absolute;bottom:0;left:0;width:100%;height:22px;line-height:22px;overflow:hidden;background-position:left -22px}.ydd-padding010{padding:0 10px}#yddWrapper{color:#252525;z-index:10001;background:url(chrome-extension://eopjamdnofihpioajgfdikhhbobonhbb/ab20.png);}#yddContainer{background:#fff;border-color:#4b7598}#yddTopBorderlr{border-color:#f0f8fc}#yddWrapper .ydd-sp{background-image:url(chrome-extension://eopjamdnofihpioajgfdikhhbobonhbb/ydd-sprite.png)}#yddWrapper a,#yddWrapper a:hover,#yddWrapper a:visited{color:#50799b}#yddWrapper .ydd-tabs{color:#959595}.ydd-tabs,.ydd-tab{background:#fff;border-color:#d5e7f3}#yddBottom{color:#363636}#yddWrapper{min-width:250px;max-width:400px;}</style></html>
